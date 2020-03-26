@@ -22,8 +22,8 @@ const useStyles = makeStyles({
   },
 })
 
-export default function TemporaryDrawer() {
-  const classes = useStyles();
+ {
+  const classes = useStyles()
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -74,3 +74,5 @@ export default function TemporaryDrawer() {
   )
 }
 }
+export default NavBar
+export default function TemporaryDrawer()
