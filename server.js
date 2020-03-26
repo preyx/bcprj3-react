@@ -46,6 +46,9 @@ require('./config')
 
 client.on('ready', _ => console.log('Connected to server!'))
 client.on('close', error => { if (error) console.error('Client closed due to error:', error) })
-client.on('PRIVMSG', msg => { console.log(`[#${msg.channelName}] ${msg.displayName}: ${msg.messageText}`) })
+client.on('PRIVMSG', msg => { console.log(msg) })
+// client.on('PRIVMSG', msg => {
+//   console.log(``)
+// })
 client.connect()
 client.join('bootcampbot2020')
