@@ -5,6 +5,11 @@ const LocalStrategy = require('passport-local').Strategy
 const { Strategy: JWTStrategy, ExtractJwt } = require('passport-jwt')
 const { User } = require('./models')
 const app = express()
+const { ChatClient } = require('dank-twitch-irc')
+const client = new ChatClient({
+  username: process.env.TWITCH_USERNAME,
+  password: process.env.TWITCH_PASSWORD
+})
 
 app.use(express.static(join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
@@ -36,3 +41,9 @@ app.get('/join', (req, res) => {
 require('./config')
   .then(() => app.listen(process.env.PORT || 3000))
   .catch(e => console.error(e))
+
+client.on('ready', _ => console.log('Connected to server!'))
+client.on('close', error => { if (error) console.error('Client closed due to error:', error) })
+client.on('PRIVMSG', msg => { console.log(`[#${msg.channelName}] ${msg.displayName}: ${msg.messageText}`) })
+client.connect()
+client.join('bootcampbot2020')
