@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const { join } = require('path')
 const passport = require('passport')
@@ -6,6 +7,7 @@ const { Strategy: JWTStrategy, ExtractJwt } = require('passport-jwt')
 const { User } = require('./models')
 const app = express()
 const { ChatClient } = require('dank-twitch-irc')
+
 let client = new ChatClient({
   username: process.env.TWITCH_USERNAME,
   password: process.env.TWITCH_PASSWORD
