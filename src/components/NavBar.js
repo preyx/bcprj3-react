@@ -51,7 +51,7 @@ const useStyles = makeStyles({
       <List>
         {['Chat', 'Settings', 'Log Out'].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <ChatIcon /> : <SettingsIcon /> : <ExitToAppIcon />}</ListItemIcon>
+            <ListItemIcon>{index === 0 ? <ChatIcon /> :( index === 1 ? <SettingsIcon /> : <ExitToAppIcon />)}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -75,4 +75,4 @@ const useStyles = makeStyles({
 }
 }
 export default NavBar
-export default function TemporaryDrawer()
+export default TemporaryDrawer
