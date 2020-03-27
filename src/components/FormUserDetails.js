@@ -5,8 +5,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { styles } from 'debug-logger';
 
-
-export class FormUserDetails extends Component {
+export default class FormUserDetails extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -51,9 +50,17 @@ export class FormUserDetails extends Component {
   }
 }
 
+<<<<<<< HEAD
 const styles = {
   button: {
     margin 15
   }
 }
 export default FormUserDetails;
+=======
+// const styles = {
+//   button: {
+//     margin 15
+//   }
+// }
+>>>>>>> 2fae55d0c8a36ae975ce367259f6f5330f65293e
