@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import './App.css';
-import { UserForm } from './components/UserForm';
+import React, { Component } from 'react'
+import './App.css'
+import { UserForm } from './components/UserForm'
 
 
 class App extends Component {
-  render() {
+  render () {
     return (
-    
-    <div className="App">
-      
-    </div>
-  )
-  export default App
+      <div className='App' />
+    )
+  }
+}
+
+export default App
