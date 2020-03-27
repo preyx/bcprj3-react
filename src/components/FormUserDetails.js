@@ -13,7 +13,7 @@ export class FormUserDetails extends Component {
   }
 
   render() {
-    const { values } = this.props;
+    const { values, handleChange } = this.props;
     return (
       <MuiThemeProvider>
         <React.Fragment>
@@ -56,3 +56,4 @@ const styles = {
     margin 15
   }
 }
+export default FormUserDetails;
