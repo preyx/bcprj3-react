@@ -32,6 +32,7 @@ export class UserForm extends Component {
     const { firstName, lastName, email } = this.state;
     const values = { firstName, lastName, email }
 
+    
     switch(step) {
       case 1:
         return (
@@ -48,11 +49,12 @@ export class UserForm extends Component {
         case 4:
           return <h1>Success</h1> 
     }
-
+    
 
     return (
       <div>
-
+default:
+            text="Try Again"
 
       </div>
     )
