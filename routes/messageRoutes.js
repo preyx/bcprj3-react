@@ -9,5 +9,12 @@ router.post('/messages', (req, res) => {
     })
     .catch(e => console.log(e))
 })
+router.get('/messages/channelid', (req, res) => {
+  MyModel.find({ channelId: req.params.channelid })
+    .then((data) => {
+      res.json(data)
+    })
+    .catch(e => console.log(e))
+})
 
 module.exports = router
