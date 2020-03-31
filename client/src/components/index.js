@@ -1,2 +1,2 @@
-export { default } from './UserForm.js'
+export { default } from './SignUp'
 export { default } from './Form'
