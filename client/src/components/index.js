@@ -1,2 +1,2 @@
 export { default } from './SignUp'
-export { default } from './Form'
+export { default } from './form/Form'

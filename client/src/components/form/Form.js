@@ -12,7 +12,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ValidationTextFields() {
+// export default function ValidationTextFields()
+ {
   const classes = useStyles();
 
   return form(
@@ -49,3 +50,4 @@ export default function ValidationTextFields() {
 }
 console.log('Twitch Bot Listening')
 export default form
+
