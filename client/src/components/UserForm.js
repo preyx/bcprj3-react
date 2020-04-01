@@ -16,7 +16,7 @@ export class UserForm extends Component {
     });
   }
 
-  // go back to prev step
+
   prevStep = () => {
     const { step } = this.state;
     this.setState({
