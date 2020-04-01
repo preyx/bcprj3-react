@@ -1,7 +1,7 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
+import TextField from '../Signup/node_modules/@material-ui/core/TextField';
 import { OutlinedInput } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '../Signup/node_modules/@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
