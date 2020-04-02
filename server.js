@@ -41,7 +41,7 @@ app.get('/join', (req, res) => {
 })
 
 require('./config')
-  .then(() => app.listen(process.env.PORT || 3000))
+  .then(() => app.listen(process.env.PORT || 3001))
   .catch(e => console.error(e))
 
 client.on('ready', _ => console.log('Connected to server!'))
