@@ -13,7 +13,7 @@ let client = new ChatClient({
   password: process.env.TWITCH_PASSWORD
 })
 
-app.use(express.static(join(__dirname, 'public')))
+app.use(express.static(join(__dirname, 'client', 'build')))
 app.use(express.urlencoded({ extended: true }))
 app.use(passport.initialize())
 app.use(passport.session())
