@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   fullList: {
     width: 'auto',
   },
-});
+})
 
  {
   const classes = useStyles();
@@ -29,15 +29,15 @@ const useStyles = makeStyles({
     left: false,
     bottom: false,
     right: false,
-  });
+  })
 
   const toggleDrawer = (anchor, open) => event => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
 
-    setState({ ...state, [anchor]: open });
-  };
+    setState({ ...state, [anchor]: open })
+  }
 
   const list = anchor => (
     <div
@@ -57,7 +57,7 @@ const useStyles = makeStyles({
         ))}
       </List>
     </div>
-  );
+  )
 
   return (
     <div>
@@ -70,7 +70,7 @@ const useStyles = makeStyles({
         </React.Fragment>
       ))}
     </div>
-  );
+  )
 }
 }
 export default NavBar
