@@ -1,5 +1,3 @@
-import React, { Component } from "react";
-import "./App.css";
 import Dialog from "@material-ui/core/Dialog";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -8,49 +6,14 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: "",
-      password: "",
-      message: "",
-      open: false
-    };
-  }
-
-  setUsername = event => {
-    this.setState({
-      username: event.target.value
-    });
+constructor(props) {
+  super(props);
+  this.state = {
+    username: "",
+    password: "",
+    message: "",
+    open: false
   };
-
-  setPassword = event => {
-    this.setState({
-      password: event.target.value
-    });
-  };
-
-  signIn = () => {
-    if (this.state.username === "react" && this.state.password === "password") {
-      this.setState({
-        open: true,
-        message: "You have successfully Logged In!"
-      });
-    } else {
-      this.setState({
-        open: true,
-        message: "Incorrect Username or Password!"
-      });
-    }
-  };
-
-  handleClose = () => {
-    this.setState({
-      open: false
-    });
-  };
-
   render() {
     return (
       <div className="App">
@@ -108,6 +71,3 @@ class App extends Component {
       </div>
     );
   }
-}
-
-export default App;
