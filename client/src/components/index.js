@@ -1,3 +1,2 @@
-export { default } from './Signup/SignUp'
-// export { default } from './form/Form'
-export { default } from './components/login'
+export { default } from './Signup/index'
+export { default } from './login/index'

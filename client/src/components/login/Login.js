@@ -6,7 +6,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import CardHeader from '@material-ui/core/CardHeader';
+import App from '../../App';
 
+const Login = () => {
 const useStyles = makeStyles((theme: Theme) => {
   createStyles({
     container: {
@@ -28,10 +30,9 @@ const useStyles = makeStyles((theme: Theme) => {
       marginTop: theme.spacing(10)
     }
 
-  }),
-}
+  })
 
-const Login = () => {
+  const Login = () => {
   const classes = useStyles();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -111,5 +112,4 @@ const Login = () => {
     </React.Fragment>
   );
 }
-
-export default Login;
+export default App
