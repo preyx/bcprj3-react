@@ -12,11 +12,12 @@ import LockOutlinedIcon from './node_modules/@material-ui/icons/LockOutlined';
 import Typography from './node_modules/@material-ui/core/Typography';
 import { makeStyles } from './node_modules/@material-ui/core/styles';
 import Container from './node_modules/@material-ui/core/Container';
+import App from './App';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
+      {'Copyright ©BOOTCAMP BOT'}
       <Link color="inherit" href="https://material-ui.com/">
         Your Website
       </Link>{' '}
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+ function SignUp() {
   const classes = useStyles();
 
   return (
@@ -133,7 +134,7 @@ export default function SignUp() {
         </form>
       </div>
       <Box mt={5}>
-        <Copyright />
+      
       </Box>
     </Container>
   );
