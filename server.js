@@ -13,7 +13,7 @@ let client = new ChatClient({
   password: process.env.TWITCH_PASSWORD
 })
 
-app.use(express.static(join(__dirname, 'public')))
+app.use(express.static(join(__dirname, 'client', 'build')))
 app.use(express.urlencoded({ extended: true }))
 app.use(passport.initialize())
 app.use(passport.session())
@@ -41,7 +41,7 @@ app.get('/join', (req, res) => {
 })
 
 require('./config')
-  .then(() => app.listen(process.env.PORT || 3000))
+  .then(() => app.listen(process.env.PORT || 3001))
   .catch(e => console.error(e))
 
 client.on('ready', _ => console.log('Connected to server!'))
