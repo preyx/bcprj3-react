@@ -5,14 +5,15 @@
 
 
 .App-header {
+  border: solid 10px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgb(243, 248, 248);
-  font-size: calc(15px + 2vmin);
-  color: rgb(59, 5, 236);
+  font-size: calc(35px + 2vmin);
+  color: rgb(82, 32, 248);
 }
 
 .Login {
@@ -20,15 +21,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 10px solid rgb(53, 11, 240);
-  padding: 50px;
+  border: 15px solid rgb(82, 32, 248);
+  padding: 85px;
 }
 
 .Button {
-  padding: 60px;
-  border-radius: 20%;
-  -webkit-border-radius: 20%;
-  -moz-border-radius: 20%;
-  -ms-border-radius: 20%;
-  -o-border-radius: 20%;
+  padding: 10px;
+  border-radius: 10%;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
 }
