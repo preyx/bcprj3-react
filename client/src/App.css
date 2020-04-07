@@ -1,20 +1,11 @@
-/* .App {
+.App {
   text-align: center;
+  background-color: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
-  background-color: #282c34;
+  border: solid 10px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -135,4 +126,25 @@ button {
   border: none;
   border-radius: 8px;
   margin-left: 10px;
+  background-color: rgb(243, 248, 248);
+  font-size: calc(35px + 2vmin);
+  color: rgb(82, 32, 248);
+}
+
+.Login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 15px solid rgb(82, 32, 248);
+  padding: 85px;
+}
+
+.Button {
+  padding: 10px;
+  border-radius: 10%;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
 }

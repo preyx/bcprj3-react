@@ -1,7 +1,7 @@
 import React from 'react';
-import TextField from '../Signup/node_modules/@material-ui/core/TextField';
+import TextField from '../signup/@material-ui/core/TextField';
 import { OutlinedInput } from '@material-ui/core';
-import { makeStyles } from '../Signup/node_modules/@material-ui/core/styles';
+import { makeStyles } from '../signup/@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   return form(
     <form className={classes.root} noValidate autoComplete="off">
       <div>
-        <TextField error id="standard-error" label="Error" defaultValue="Hello World" />
+        <TextField error id="standard-error" label="Error" defaultValue="BootCamp Bot" />
         <TextField
           error
           id="standard-error-helper-text"
@@ -49,5 +49,5 @@ const useStyles = makeStyles(theme => ({
   );
 }
 console.log('Twitch Bot Listening')
-export default form
+export default App
 
