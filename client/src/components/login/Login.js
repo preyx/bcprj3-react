@@ -6,7 +6,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
-constructor(props) {
+constructor(props); {
   super(props);
   this.state = {
     username: "",
@@ -14,7 +14,7 @@ constructor(props) {
     message: "",
     open: false
   };
-  render() {
+  render(); {
     return (
       <div className="App">
         <header className="App-header">
@@ -69,5 +69,8 @@ constructor(props) {
           </Dialog>
         </header>
       </div>
+    
     );
   }
+}
+    
