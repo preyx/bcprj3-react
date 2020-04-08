@@ -14,7 +14,9 @@ const passport = require('passport')
 //   })
 //   .catch(e => console.log(e))
 
-router.post('/messages', passport.authenticate('jwt'), (req, res) => {
+// , passport.authenticate('jwt')
+
+router.post('/messages', (req, res) => {
   Message.create(req.body)
     .then(data => res.json(data))
     .catch(e => console.log(e))

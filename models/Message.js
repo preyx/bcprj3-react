@@ -9,6 +9,6 @@ const MessageSchema = new Schema({
   messageText: String
 })
 
-MessageSchema.plugin(require('passport-local-mongoose'))
+// MessageSchema.plugin(require('passport-local-mongoose'))
 
 module.exports = model('message', MessageSchema)

@@ -28,9 +28,13 @@ export default function Home (props) {
   // const handleListItemClick = (event, index) => {
   //   setSelectedIndex(index)
   // }
-
+  const chatList = props.Chat.map((item) =>
+    <ListItem>
+      <ListItemText primary={item.messageText} />
+    </ListItem>
+  )
   return (
-    <Container component='main' maxWidth='m'>
+    <Container component='main' maxWidth='md'>
       <Paper style={{ maxHeight: '100%', overflow: 'auto' }}>
         <div className={classes.root}>
           {/* <List component='nav' aria-label='main mailbox folders'>
@@ -56,7 +60,7 @@ export default function Home (props) {
           </ListItem>
         </List>
         <Divider /> */}
-          <List component='chat' aria-label='chatbox'>
+          <List aria-label='chatbox'>
             {/* {this.props.messages.map(message => {
               return(
                 <ListItem>
@@ -64,11 +68,7 @@ export default function Home (props) {
                 </ListItem>
               )
             })} */}
-            state.items.map(({ __id, messageText }) => (
-            <ListItem>
-              <ListItemText primary={messageText} />
-            </ListItem>
-            ))
+            {chatList}
             <ListItem>
               <ListItemText primary='Message1 <img src="https://static-cdn.jtvnw.net/emoticons/v1/440/1.0"/>' />
             </ListItem>

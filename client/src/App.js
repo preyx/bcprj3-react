@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useReducer } from 'react'
 // import logo from './logo.svg';
-import { ChatProvider } from './utils/GlobalState'
+// import { ChatProvider } from './utils/GlobalState'
+import axios from 'axios'
 import Home from './components/Home'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
@@ -8,85 +9,49 @@ import Header from './components/Header'
 import ChatBar from './components/ChatBar'
 import './App.css'
 
-const test = ['message1', 'message2', 'message3']
+class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      lastPost: 0,
+      posts: []
+    }
+  }
 
-function App () {
-  return (
-    <ChatProvider>
-      <Header />
-      <Home />
-      <ChatBar />
-    </ChatProvider>
-  )
+  componentDidMount () {
+    this.timerID = setInterval(
+      () => this.tick(),
+      10000
+    )
+  }
+
+  componentWillUnmount () {
+    clearInterval(this.timerID)
+  }
+
+  tick () {
+    axios.get(`/api/messages/${this.state.lastPost}`)
+      .then(data => {
+        console.log(data.data)
+        this.setState({
+          posts: this.state.posts.concat(data.data)
+        })
+      })
+      .catch(err => console.log(err))
+  }
+
+  // const test = ['message1', 'message2', 'message3']
+
+  render () {
+    return (
+    // <ChatProvider>
+      <>
+        <Header />
+        <Home Chat={this.state.posts} />
+        <ChatBar />
+      </>
+    // </ChatProvider>
+    )
+  }
 }
-
 export default App
-
-// import React from 'react'
-// import { Platform } from 'react-native'
-// import PropTypes from 'prop-types'
-// import { GiftedChat } from 'react-native-gifted-chat'
-// import emojiUtils from 'emoji-utils'
-
-// import SlackMessage from './src/Chat/SlackMessage'
-
-// export default class App extends React.Component {
-//   state = {
-//     messages: [],
-//   }
-
-//   componentDidMount() {
-//     this.setState({
-//       messages: [
-//         {
-//           _id: 1,
-//           text: 'Hello developer!!!',
-//           createdAt: new Date(),
-//           user: {
-//             _id: 2,
-//             name: 'React Native',
-//             avatar: 'https://placeimg.com/140/140/any',
-//           },
-//         },
-//       ],
-//     })
-//   }
-
-//   onSend(messages = []) {
-//     this.setState(previousState => ({
-//       messages: GiftedChat.append(previousState.messages, messages),
-//     }))
-//   }
-
-//   renderMessage(props) {
-//     const {
-//       currentMessage: { text: currText },
-//     } = props
-
-//     let messageTextStyle
-
-//     // Make "pure emoji" messages much bigger than plain text.
-//     if (currText && emojiUtils.isPureEmojiString(currText)) {
-//       messageTextStyle = {
-//         fontSize: 28,
-//         // Emoji get clipped if lineHeight isn't increased; make it consistent across platforms.
-//         lineHeight: Platform.OS === 'android' ? 34 : 30,
-//       }
-//     }
-
-//     return <SlackMessage {...props} messageTextStyle={messageTextStyle} />
-//   }
-
-//   render() {
-//     return (
-//       <GiftedChat
-//         messages={this.state.messages}
-//         onSend={messages => this.onSend(messages)}
-//         user={{
-//           _id: 1,
-//         }}
-//         renderMessage={this.renderMessage}
-//       />
-//     )
-//   }
-// }

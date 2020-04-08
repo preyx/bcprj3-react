@@ -5,9 +5,12 @@ const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const { Strategy: JWTStrategy, ExtractJwt } = require('passport-jwt')
 const { User } = require('./models')
+const cors = require('cors')
 const app = express()
 const { ChatClient } = require('dank-twitch-irc')
 const { Message } = require('./models')
+
+app.use(cors())
 
 const client = new ChatClient({
   username: process.env.TWITCH_USERNAME,
@@ -48,7 +51,7 @@ require('./config')
 client.on('ready', _ => console.log('Connected to server!'))
 client.on('close', error => { if (error) console.error('Client closed due to error:', error) })
 client.on('PRIVMSG', msg => {
-  // console.log(msg)
+  console.log(msg)
   Message.create({
     timestamp: msg.serverTimestampRaw,
     displayName: msg.displayName,
