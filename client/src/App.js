@@ -3,8 +3,8 @@ import React, { useState, useEffect, useRef, useReducer } from 'react'
 // import { ChatProvider } from './utils/GlobalState'
 import axios from 'axios'
 import Home from './components/Home'
-import Login from './components/Login'
-import SignUp from './components/SignUp'
+// import Login from './components/Login'
+// import SignUp from './components/SignUp'
 import Header from './components/Header'
 // import ChatBar from './components/ChatBar'
 // import { Redirect } from 'react-router'
@@ -25,7 +25,7 @@ class App extends React.Component {
     this.tick()
     this.timerID = setInterval(
       () => this.tick(),
-      10000
+      3000
     )
   }
 
@@ -59,22 +59,25 @@ class App extends React.Component {
 
   render () {
     return (
-      <Router forceRefresh>
-        <Switch>
-          <Route exact path='/'>
-            {this.logout()}
-            <Login />
-          </Route>
-          <Route path='/register'>
-            <SignUp />
-          </Route>
-          <Route path='/home'>
-            <Header />
-            <Home Chat={this.state.posts} />
-            {/* <ChatBar /> */}
-          </Route>
-        </Switch>
-      </Router>
+      <>
+        <Header />
+        <Home Chat={this.state.posts} />
+      </>
+      // <Router forceRefresh>
+      //   <Switch>
+      //     <Route exact path='/'>
+      //       {this.logout()}
+      //       <Login />
+      //     </Route>
+      //     <Route path='/register'>
+      //       <SignUp />
+      //     </Route>
+      //     <Route path='/home'>
+      //       <Header />
+      //       <Home Chat={this.state.posts} />
+      //     </Route>
+      //   </Switch>
+      // </Router>
     )
   }
 }

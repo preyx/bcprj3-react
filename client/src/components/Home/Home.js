@@ -36,11 +36,11 @@ export default function Home (props) {
   // if (props.Chat.length === 1 && props.Chat[0] === 'Error') {
   //   chatList = 'INVALID SESSION! PLEASE LOG OUT AND LOG IN AGAIN'
   // } else {
-    chatList = props.Chat.map((item) =>
-      <ListItem key={item._id}>
-        <span className={classes.displayName} style={{ color: item.color }}>{item.displayName}</span> {item.messageText}
-      </ListItem>
-    )
+  chatList = props.Chat.map((item) =>
+    <ListItem key={item._id}>
+      <span className={classes.displayName} style={{ color: item.color }}>{item.displayName}</span> {item.messageText}
+    </ListItem>
+  )
   // }
   return (
     <Container component='main' maxWidth='md'>
