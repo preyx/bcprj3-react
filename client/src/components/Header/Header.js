@@ -32,7 +32,7 @@ export default function ButtonAppBar () {
           <Typography variant='h6' className={classes.title}>
             BootCampBot
           </Typography>
-          <Button color='inherit'>Logout</Button>
+          <Button color='inherit' href='/'>Logout</Button>
         </Toolbar>
       </AppBar>
     </div>

@@ -21,7 +21,7 @@ router.post('/messages', (req, res) => {
     .then(data => res.json(data))
     .catch(e => console.log(e))
 })
-router.get('/messages/:timestamp', (req, res) => {
+router.get('/messages/:timestamp', passport.authenticate('jwt'), (req, res) => {
   // Post.find({'page': curPage}).sort('-date').limit(10).exec(function(err, posts){
   if (req.params.timestamp === 0) {
     Message.find().sort('-timestamp').limit(50)

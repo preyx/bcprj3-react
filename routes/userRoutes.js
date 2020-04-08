@@ -7,9 +7,8 @@ router.post('/users/login', (req, res) => {
     if (err) throw err
     res.json({
       isLoggedIn: !!user,
-      items: user.items,
       user: user.username,
-      token: jwt.sign({ id: user._id }, 'hotdog')
+      token: jwt.sign({ id: user._id }, 'B00tC4mpB0t2020')
     })
   })
 })
@@ -22,6 +21,20 @@ router.post('/users/register', (req, res) => {
     if (err) throw err
     res.sendStatus(200)
   })
+})
+
+router.get('/logout', function (req, res, next) {
+  if (req.session) {
+    // delete session object
+    req.session.destroy(function (err) {
+      if (err) {
+        return next(err)
+      } else {
+        return res.redirect('/')
+      }
+    })
+  }
+  console.log('logged out')
 })
 
 module.exports = router

@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 // import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
+// import ListItemText from '@material-ui/core/ListItemText'
 // import Divider from '@material-ui/core/Divider'
 // import InboxIcon from '@material-ui/icons/Inbox'
 // import DraftsIcon from '@material-ui/icons/Drafts'
@@ -14,9 +14,13 @@ import Paper from '@material-ui/core/Paper'
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxWidth: 360,
+    // maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
     margin: '4em 0'
+  },
+  displayName: {
+    marginRight: '0.5em',
+    fontWeight: 900
   }
 }))
 
@@ -28,14 +32,19 @@ export default function Home (props) {
   // const handleListItemClick = (event, index) => {
   //   setSelectedIndex(index)
   // }
-  const chatList = props.Chat.map((item) =>
-    <ListItem>
-      <ListItemText primary={item.messageText} />
-    </ListItem>
-  )
+  let chatList = ''
+  // if (props.Chat.length === 1 && props.Chat[0] === 'Error') {
+  //   chatList = 'INVALID SESSION! PLEASE LOG OUT AND LOG IN AGAIN'
+  // } else {
+    chatList = props.Chat.map((item) =>
+      <ListItem key={item._id}>
+        <span className={classes.displayName} style={{ color: item.color }}>{item.displayName}</span> {item.messageText}
+      </ListItem>
+    )
+  // }
   return (
     <Container component='main' maxWidth='md'>
-      <Paper style={{ maxHeight: '100%', overflow: 'auto' }}>
+      <Paper style={{ Height: '100%' }}>
         <div className={classes.root}>
           {/* <List component='nav' aria-label='main mailbox folders'>
           <ListItem
@@ -69,7 +78,68 @@ export default function Home (props) {
               )
             })} */}
             {chatList}
+            {/* <ListItem>
+              Message
+            </ListItem>
             <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              Message
+            </ListItem>
+            <ListItem>
+              MessageX
+            </ListItem>
+            <ListItem>
+              MessageY
+            </ListItem>
+            <ListItem>
+              MessageZ
+            </ListItem> */}
+
+            {/* <ListItem>
               <ListItemText primary='Message1 <img src="https://static-cdn.jtvnw.net/emoticons/v1/440/1.0"/>' />
             </ListItem>
             <ListItem>
@@ -128,7 +198,7 @@ export default function Home (props) {
             </ListItem>
             <ListItem>
               <ListItemText primary='Message2' />
-            </ListItem>
+            </ListItem> */}
           </List>
         </div>
       </Paper>

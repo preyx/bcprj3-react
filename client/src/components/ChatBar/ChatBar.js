@@ -69,40 +69,42 @@ import InputBase from '@material-ui/core/InputBase'
 // ]
 
 const useStyles = makeStyles((theme) => ({
-  text: {
-    padding: theme.spacing(2, 2, 0)
-  },
-  paper: {
-    paddingBottom: 50
-  },
-  list: {
-    marginBottom: theme.spacing(2)
-  },
-  subheader: {
-    backgroundColor: theme.palette.background.paper
-  },
+  // text: {
+  //   padding: theme.spacing(2, 2, 0)
+  // },
+  // paper: {
+  //   paddingBottom: 50
+  // },
+  // list: {
+  //   marginBottom: theme.spacing(2)
+  // },
+  // subheader: {
+  //   backgroundColor: theme.palette.background.paper
+  // },
   appBar: {
     top: 'auto',
     bottom: 0
   },
-  grow: {
-    flexGrow: 1
-  },
-  fabButton: {
-    position: 'absolute',
-    zIndex: 1,
-    top: -30,
-    left: 0,
-    right: 0,
-    margin: '0 auto'
-  },
+  // grow: {
+  //   flexGrow: 1
+  // },
+  // fabButton: {
+  //   position: 'absolute',
+  //   zIndex: 1,
+  //   top: -30,
+  //   left: 0,
+  //   right: 0,
+  //   margin: '0 auto'
+  // },
   chat: {
     // position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: theme.palette.common.white,
     // marginRight: theme.spacing(2),
     marginLeft: '1em',
-    width: '100%'
+    paddingLeft: '0.5em',
+    width: 'auto',
+    flex: 1
     // [theme.breakpoints.up('sm')]: {
     // marginLeft: theme.spacing(3),
     //   width: 'auto',
@@ -153,7 +155,7 @@ export default function BottomAppBar () {
               inputProps={{ 'aria-label': 'chat' }}
             />
           </div>
-          <div className={classes.grow} />
+          {/* <div className={classes.grow} /> */}
           {/* <IconButton color='inherit'>
             <SearchIcon />
           </IconButton> */}
