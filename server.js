@@ -5,12 +5,12 @@ const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const { Strategy: JWTStrategy, ExtractJwt } = require('passport-jwt')
 const { User } = require('./models')
-const cors = require('cors')
+// const cors = require('cors')
 const app = express()
 const { ChatClient } = require('dank-twitch-irc')
 const { Message } = require('./models')
 
-app.use(cors())
+// app.use(cors())
 
 const client = new ChatClient({
   username: process.env.TWITCH_USERNAME,
