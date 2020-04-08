@@ -1,13 +1,12 @@
 const { model, Schema } = require('mongoose')
 
 const MessageSchema = new Schema({
-  timestamp: String,
+  timestamp: Date,
   displayName: String,
   channelId: Number,
   color: String,
-  emotes: String,
+  emotes: [Schema.Types.Mixed],
   messageText: String
-
 })
 
 MessageSchema.plugin(require('passport-local-mongoose'))
